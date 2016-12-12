@@ -184,6 +184,8 @@ export default class TabViewTransitioner extends Component<DefaultProps, Props, 
       }
       return;
     }
+    if (this.props.onRequestChangeTabStart != undefined)
+    	this.props.onRequestChangeTabStart(index);
 
     this._triggerEvent('jump', index);
     this._nextIndex = index;
